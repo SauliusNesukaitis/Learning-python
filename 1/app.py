@@ -1,3 +1,5 @@
+# python -m venv venv
+
 print("labas")
 
 a = 8
