@@ -74,11 +74,11 @@ class PirmaKlase:
 class AntraKlase:
     pass
 class TreciaKlase:
-    return None
+    # return None
 
  # Jei klasę sudaro kelios funkcijos, patartina tarp jų palikti vieną eilutę tuščią, pvz.,   
 
-class PirmaKlase:
+# class PirmaKlase:
     def pirmas_metodas(self):
         return None
     
@@ -164,11 +164,11 @@ veiksmas = (kintamasis
 Dokumentacija
 '''
 # arba
-def funkcija():
-"""
-Dokumentacija
-"""
-    veiksmai
+# def funkcija():
+# """
+# Dokumentacija
+# """
+#     veiksmai
 # Turint vienos eilutės dokumentaciją, tiek pradžios, tiek pabaigos kabutės rašomos toje pat
 # eilutėje. Jei dokumentaciją sudaro daugiau eilučių, pabaigos kabutės yra naujoje eilutėje
 
