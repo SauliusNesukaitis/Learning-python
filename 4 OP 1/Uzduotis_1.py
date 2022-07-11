@@ -14,10 +14,11 @@
 # Gauti skaičiai sudauginami. Gautas sienos tūris plytomis ir bus ieškomas plytų skaičius. 
 # Visi rezultatai pateikiami sveikaisiais skaičiais. (int)
 # Skaičiuojami kiekvieno tipo plytų kiekiai namo sienoms mūryti.
-import this
+# import this
+
 import math
-x = 5.1
-print(math.ceil(x))
+# x = 5.1
+# print(math.ceil(x))
 
 class Plyta:
     def __init__(self, aukstis, plotis, ilgis):
@@ -25,5 +26,15 @@ class Plyta:
         self.plotis = plotis
         self.ilgis = ilgis
 
-    def __str__(self):
-        return f"Turis: {self.aukstis*self.plotis*self.ilgis}"
+    def turis(self):
+        return self.aukstis*self.plotis*self.ilgis
+
+class Namas(Plyta):
+    def kiekis(self):
+        return math.ceil((self.turis() * 4) / plyta1.turis())
+
+
+plyta1 = Plyta(6.5, 12, 25)
+namas1 = Namas(300, 24, 595)
+# print(plyta1.turis())
+print(namas1.kiekis())
