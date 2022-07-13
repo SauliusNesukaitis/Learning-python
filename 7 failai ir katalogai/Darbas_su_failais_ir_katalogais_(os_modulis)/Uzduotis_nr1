@@ -1,0 +1,176 @@
+
+#===========================================KLASES============================================================
+class Agentura:
+    def __init__(self, pavadinimas, adresas, telefonas):
+        self.pavadinimas = pavadinimas
+        self.adresas = adresas
+        self.telefonas = telefonas
+
+    def __str__(self):
+        return f"Agenturos pavadinimas:{self.pavadinimas}, adresas:{self.adresas}, telefonas:{self.telefonas}"
+
+    def __repr__(self):
+        return f"Agenturos pavadinimas:{self.pavadinimas}, adresas:{self.adresas}, telefonas:{self.telefonas}"
+
+#-------------------------------------------------------------------------------------------------------------
+class RealEstate():
+    def __init__(self, miestas, mikrorajonas, gatve, namo_numeris, tipas , pastatymo_metai, plotas, kmabarius_skaicius):
+        self.miestas = miestas
+        self.mikrorajonas = mikrorajonas
+        self.gatve = gatve
+        self.namo_numeris = namo_numeris
+        self.tipas = tipas
+        self.pastatymo_metai = pastatymo_metai
+        self.plotas =  plotas
+        self.kambariu_skaicius = kmabarius_skaicius
+
+#-------------------------------------------------------------------------------------------------------------
+class Flat(RealEstate):
+    def __init__(self, miestas, mikrorajonas, gatve, namo_numeris, tipas, pastatymo_metai, plotas, kmabarius_skaicius, aukstas):
+        super().__init__(miestas, mikrorajonas, gatve, namo_numeris, tipas, pastatymo_metai, plotas, kmabarius_skaicius)
+        self.aukstas = aukstas
+    
+    def __str__(self):
+        return f"Miestas: {self.miestas}, mikrorajonas: {self.mikrorajonas}, gatve: {self.gatve}, namo_numeris: {self.namo_numeris}, tipas: {self.tipas}, pastatymo_metai: {self.pastatymo_metai}, plotas: {self.plotas}, kmabarius_skaicius: {self.kambariu_skaicius}, aukstas: {self.aukstas} "
+
+    def __repr__(self):
+        return f"Miestas: {self.miestas}, mikrorajonas: {self.mikrorajonas}, gatve: {self.gatve}, namo_numeris: {self.namo_numeris}, tipas: {self.tipas}, pastatymo_metai: {self.pastatymo_metai}, plotas: {self.plotas}, kmabarius_skaicius: {self.kambariu_skaicius}, aukstas: {self.aukstas} "
+
+#-------------------------------------------------------------------------------------------------------------
+class House(RealEstate):
+    def __init__(self, miestas, mikrorajonas, gatve, namo_numeris, tipas, pastatymo_metai, plotas, kmabarius_skaicius, sildymo_budas):
+        super().__init__(miestas, mikrorajonas, gatve, namo_numeris, tipas, pastatymo_metai, plotas, kmabarius_skaicius)
+        self.sildymo_budas = sildymo_budas   
+    
+    def __str__(self):
+        return f"Miestas: {self.miestas}, mikrorajonas: {self.mikrorajonas}, gatve: {self.gatve}, namo_numeris: {self.namo_numeris}, tipas: {self.tipas}, pastatymo_metai: {self.pastatymo_metai}, plotas: {self.plotas}, kmabarius_skaicius: {self.kambariu_skaicius}, sildymo budas: {self.sildymo_budas} "
+
+    def __repr__(self):
+        return f"Miestas: {self.miestas}, mikrorajonas: {self.mikrorajonas}, gatve: {self.gatve}, namo_numeris: {self.namo_numeris}, tipas: {self.tipas}, pastatymo_metai: {self.pastatymo_metai}, plotas: {self.plotas}, kmabarius_skaicius: {self.kambariu_skaicius}, sildymo budas: {self.sildymo_budas} "
+
+#================================Duomenu ivedimas=================================================
+# Agenturos duomenys 
+agenturos = [] # Kai naudojame while
+
+'''
+while True:
+    meniu = int(input("""Pasirinkite
+    1 kad ivesti agenturos pavadinima, adresa ir telefona
+    2 kad atspausdinti agenturos duomenis
+    0 kad iseiti is programos
+    Pasirinkite:
+    """))
+    if meniu == 1:
+        pavadinimas = input("Iveskite agenturos pavadinima: ")
+        adresas = input("Iveskite agenturos adresa: ")
+        telefonas = input("Iveskite agenturos telefona: ")
+        agentura = Agentura(pavadinimas, adresas, telefonas)
+        agenturos.append(agentura)
+    if meniu == 2:
+        for agentura in agenturos:
+               print(agentura)
+    if meniu == 0:
+        print("Viso gero!")
+        break
+'''
+# Butu duomenys 
+butai = [] # kai naudojame While 
+
+'''while True:
+    meniu = int(input("""Pasirinkite
+    1 kad iveskit BUTO miesta, mikrorajona, gatve, namo_numeri, tipa, pastatymo_metus, plota, kmabarius_skaiciu, auksta
+    2 kad atspausdinti informacija apie butus 
+    0 iseikite is programos
+    Pasirinkite:
+    """))
+    if meniu == 1:
+        miestas = input("Iveskite buto miesta: ")
+        mikrorajonas = input("Iveskite buto mikrorajona: ")
+        gatve = input("Iveskite buto gatve: ")
+        namo_numeris = input("Iveskite buto namo numeri: ")
+        tipas = input("Iveskite buto tipa: ")
+        pastatymo_metai = input("Iveskite buto pastatymo metus: ")
+        plotas =  input("Iveskite buto plotas: ")
+        kambariu_skaicius = input("Iveskite buto kambariu skaicius: ")
+        aukstas = input("Iveskite buto auksta: ")
+        butas = Flat(miestas, mikrorajonas, gatve, namo_numeris, tipas, pastatymo_metai, plotas, kambariu_skaicius, aukstas)
+        butai.append(butai)
+    if meniu == 2:
+        for butas in butai:
+               print(butas)
+    if meniu == 0:
+        print("Viso gero! Programa uzdatyra.")
+        break
+'''
+butas1 = Flat("Vilnius", "N.Vilnia", "Darzelio", 1, "Daugiabutis", 1950, 44, 2, 9)
+butas2 = Flat("Vilnius", "N.Vilnia", "Darzelio", 3, "Daugiabutis", 1960, 56, 3, 12)
+butas3 = Flat("Vilnius", "N.Vilnia", "Parko", 5, "Daugiabutis", 1980, 65, 4, 1)
+butas4 = Flat("Vilnius", "N.Vilnia", "Geroves", 3, "Daugiabutis", 1975, 35, 2, 3)
+
+butai = [butas1, butas2, butas3, butas4]
+
+# Namu duomenys 
+# Jei naudojame while true  
+# namai = [] pries while
+
+namas1 = House("Klaipeda", "Misko", "Volunges", 17, "murinis", 1990, 100, 5, "centrinis")
+namas2 = House("Klaipeda", "Pajurio","Giliu", 45, "murinis", 2000, 85, 4, "autonominis")
+namas3 = House("Palanga", "centrinis", "Basanaviciaus", 54, "naujos statybos", 2011, 56, 3, "centrinis")
+
+namai = [namas1, namas2, namas3]
+
+#================================Funkciju formavimas=================================================
+
+def didziausias_plotas(objektu_masyvas):
+    max_objekto_plotas=objektu_masyvas[0].plotas
+    for objektas in objektu_masyvas:
+        if objektas.plotas > max_objekto_plotas:
+            max_objekto_plotas = objektas.plotas    
+        else:
+            max_objekto_plotas 
+            
+    return (max_objekto_plotas)
+
+def buto_gatve():
+    for butas in butai:
+        if butas.plotas == plotas_max_butai: 
+            print(F"Didziausio ploto butas yra {butas.gatve} getveje: , jo plotas: {butas.plotas}")
+
+def namo_gatve():
+    for namas in namai:
+        if namas.plotas == plotas_max_namai:
+            print(F"Didziausio ploto namas yra {namas.gatve} getveje: , jo plotas: {namas.plotas}")
+
+def seniausias(objektu_masyvas):
+    seniausias_objektas = objektu_masyvas[0].pastatymo_metai
+    for objektas in objektu_masyvas:
+        if seniausias_objektas > objektas.pastatymo_metai:
+            seniausias_objektas = objektas.pastatymo_metai    
+        else:
+            seniausias_objektas
+    return(seniausias_objektas)
+
+def seniausias_namas_is_visu():
+    for namas in namai:
+        if namas.pastatymo_metai == seniausias_namas:
+            print(F"Seniausias namas yra {namas.gatve} getveje: , jo pastatymo metai: {namas.pastatymo_metai}")
+
+
+def seniausias_butas_is_visu():
+    for butas in butai:
+        if butas.pastatymo_metai == seniausias_butas:
+            #print(F"Seniausias butas yra {butas.gatve} getveje: , jo pastatymo metai: {butas.pastatymo_metai}")
+            print(butas)
+
+
+#==================================Funkciju iskvietimas================================================================
+plotas_max_butai = didziausias_plotas(butai)
+buto_gatve()
+plotas_max_namai = didziausias_plotas(namai)
+namo_gatve()
+#---------------------------------------------
+seniausias_butas = seniausias(butai)
+seniausias_butas_is_visu()
+seniausias_namas = seniausias(namai)
+seniausias_namas_is_visu()
+#---------------------------------------------

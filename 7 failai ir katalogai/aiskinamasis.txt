@@ -1,0 +1,17 @@
+__name__
+
+Tai pagrindinis kodas, kuris apsaugo vartotojus nuo atsitiktinio kodo iškvietimo, kai jie to neketino. Štai keletas dažniausiai pasitaikančių problemų, kai kode apsauga neįtraukiama:
+
+Jei importuosite neapsaugotą koda kitu scenarijumi (pvz., import mano_skriptą_be_pavadinimo_eq_main_guard), antrasis kodas suaktyvins pirmąjį, kuris bus paleistas importavimo metu naudodamas antrojo kodo komandinės eilutės argumentus. 
+Tai beveik visada klaida.
+
+Jei neapsaugotame kode turite pasirinktinę klasę ir išsaugosite ją picle faile, iskvietus ją kitame kode bus suaktyvintas neapsaugoto scenarijaus importavimas su tomis pačiomis problemomis, aprašytomis ankstesniame ženklelyje.
+
+__name__ yra globalus kintamasis (Python kalboje global iš tikrųjų reiškia modulio lygmenį), esantis visose vardų erdvėse. Paprastai tai yra modulio pavadinimas (kaip str tipo).
+
+_pycache_ 
+Vykdydamas Python programą, interoretatorius pirmiausia sukompiliuoja ją į baitinį kodą ir automatiškai išsaugo aplanke __pycache__. 
+Jei pažvelgsite ten, rasite daugybę failų python .py failų pavadinimais jūsų projekto failais, 
+tik jų plėtiniai bus .pyc arba .pyo. 
+Tai atitinkamai jūsų programos failų versijos, sudarytos pagal baitinį kodą ir optimizuotos pagal baitinį kodą.
+
