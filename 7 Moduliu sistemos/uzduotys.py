@@ -10,17 +10,6 @@
 # from datetime import date
 # print(date.today())
 
-# 2 užduotis
-# Sukurti naują projektą Jame sukurti failą modulis.py, kuriame:
-# Kintamajam kintamasis priskirti reikšmę „Čia yra kintamasis“
-# Sukurti funkciją funkcija(), kuri atspausdina „Čia yra funkcija“.
-# Sukurti klasę Objektas, kurį iniciavus atspausdina „Čia yra klasė“.
-# Sukurti failą main.py, kuriame:
-# Importuoti modulį modulis
-# Atspausdinti importuotą kintamąjį kintamasis
-# Paleisti importuotą funkciją funkcija()
-# Inicijuoti importuotos klasės Objektas() objektą
-
 # 4 užduotis
 # Sukurti programą, kuri:
 # Leistų vartotojui įvesti norimą eilučių kiekį
@@ -28,3 +17,44 @@
 # Leistų vartotojui įrašyti norimą kuriamo failo pavadinimą
 # Patarimai:
 # Sukurti while ciklą, kuris užsibaigtų tik įvedus vartotojui tuščią eilutę (nuspaudus ENTER)
+
+# tekstas = ""
+
+# while True:
+#     pirmas = input("Iveskite eilute: ")
+#     if pirmas != "":
+#         tekstas += pirmas + "\n"
+#     else:
+#         break
+
+# failo_pavadinimas = input("Iveskita failo pavadinima: ")
+# with open(failo_pavadinimas + ".txt", "w", encoding="UTF-8") as failas:
+#     failas.write(tekstas)
+
+# 5 užduotis
+# Sukurti programą, kuri:
+# Kompiuterio darbalaukyje (Desktop) sukurtų katalogą „Naujas Katalogas“
+# Šiame kataloge sukurtų tekstinį failą, kuriame būtų šiandienos data ir laikas
+# Atspausdintų šio tekstinio failo sukūrimo datą ir dydį baitais
+# Patarimai:
+# Failo sukūrimo datą galima pasiekti per os.stat(„Failas.txt“).st_ctime
+
+import os
+from datetime import datetime
+
+# try:
+#     os.chdir('C:\\Users\\MSI\OneDrive\\Desktop')
+#     os.mkdir("Naujas katalogas")
+# except:
+#     "Toks katalogas jau yra"
+
+# os.chdir('C:\\Users\\MSI\\OneDrive\\Desktop\\Naujas katalogas')
+
+# with open("data.txt", "w") as failas:
+#     failas.write(str(datetime.today()))
+
+os.chdir('C:\\Users\\MSI\\OneDrive\\Desktop\\Naujas katalogas')
+print("Sukurimo data:", datetime.fromtimestamp(os.stat("data.txt").st_ctime))
+print("failo dydis:", os.stat("data.txt").st_size)
+
+
