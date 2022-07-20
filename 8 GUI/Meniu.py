@@ -11,19 +11,49 @@
 # submeniu.add_command(label="Pirmas")
 # submeniu.add_command(label="Antras")
 # langas.mainloop()
+# from tkinter import *
+# langas = Tk()
+
+# meniu = Menu(langas)
+# langas.config(menu=meniu)
+# submeniu = Menu(meniu, tearoff = 0)
+
+# def antras():
+#     print("Antras!")
+
+# meniu.add_cascade(label="Meniu", menu=submeniu)
+# submeniu.add_command(label="Pirmas")
+# submeniu.add_command(label="Antras",command=antras)
+# langas.mainloop()
+
+# Antras!
+
+
+# Kaip sukurti daugiau meniu, juos atskirti:
+
+
 from tkinter import *
 langas = Tk()
 
 meniu = Menu(langas)
 langas.config(menu=meniu)
 submeniu = Menu(meniu, tearoff = 0)
-
-def antras():
-    print("Antras!")
+submeniu2 = Menu(meniu, tearoff = 0)
+submeniu3 = Menu(meniu, tearoff = 0)
 
 meniu.add_cascade(label="Meniu", menu=submeniu)
 submeniu.add_command(label="Pirmas")
-submeniu.add_command(label="Antras",command=antras)
-langas.mainloop()
 
-# Antras!
+submeniu.add_command(label="Antras")
+submeniu.add_separator()
+submeniu.add_command(label="Trečias")
+
+meniu.add_cascade(label="Meniu 2",
+menu=submeniu2)
+submeniu2.add_command(label="1")
+submeniu2.add_command(label="2")
+
+meniu.add_cascade(label="Meniu 3",
+menu=submeniu3)
+
+langas.mainloop()
